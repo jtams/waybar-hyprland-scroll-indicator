@@ -6,8 +6,8 @@ I personally prefer to keep the scrolling layout columns 100% wide, but that mak
 
 ## Requirements
 
-- waybar v0.15.0+
-- hyprland v0.54.0+
+- Waybar v0.15.0+
+- Hyprland v0.54.0+
 - Go v1.26.0+
 
 These are just the versions I use. It almost certainly works on older versions.
@@ -24,24 +24,23 @@ You can change the path in the Makefile.
 
 ## Usage
 
-In your way bar config add:
+In your Waybar config add:
 
 ```
-"scroll_indicator": {
+"custom/scroll_indicator": {
     "exec": "~/.local/bin/hypr-scroll-indicator",
     "return-type": "json",
     "format": "{}"
 },
-
 ```
 
 And add it to the module list of your choice:
 
 ```
-"modules-center": ["scroll_indicator"]
+"modules-center": ["custom/scroll_indicator"],
 ```
 
-Restart waybar.
+Restart Waybar.
 
 # License
 
