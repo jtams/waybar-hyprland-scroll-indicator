@@ -17,14 +17,16 @@ type Client struct {
 	Hidden    bool   `json:"hidden"`
 	Mapped    bool   `json:"mapped"`
 	Workspace struct {
-		ID int `json:"id"`
+		ID   int    `json:"id"`
+		Name string `json:"name"`
 	} `json:"workspace"`
 }
 
 type ActiveWindow struct {
 	Address   string `json:"address"`
 	Workspace struct {
-		ID int `json:"id"`
+		ID   int    `json:"id"`
+		Name string `json:"name"`
 	} `json:"workspace"`
 }
 
@@ -60,7 +62,7 @@ func emit() {
 
 	var workspace []Client
 	for _, c := range clients {
-		if c.Workspace.ID == active.Workspace.ID && !c.Floating && c.Mapped && !c.Hidden {
+		if c.Workspace.Name == active.Workspace.Name && !c.Floating && c.Mapped && !c.Hidden {
 			workspace = append(workspace, c)
 		}
 	}
